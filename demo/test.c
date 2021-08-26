@@ -34,5 +34,19 @@ int main(int argument1, char *argument2[]) {
 	int status;
 	//this will be used and therefore describe later...
 	char ip__buffer[INET6_ADDRSTRLEN];
+
+
+
+	fprintf(stdout, "\n-------------------- S W I P --------------------\n");
+	//if "argument1 less than 2, this means, that we only entered program name into console "./prog"
+	if (argument1 != 2) {
+        fprintf(stderr, "\nusage: ./swip domain_name or ip\n");
+        //our program is "./swip domain/ip", if param2 is added, then will cause error, since isn't expected
+        if (argument1 > 2) {
+            fprintf(stderr, "\nUnfortunately, only one domain name/ip can be resolved\n");
+            return 1;
+        	}
+		return 1;
+    	}
 	return 0;
 }
